@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+             html, body {
+            height: 100%;
+            margin: 0;
+            padding: 10px;
+            
+        }
+
+        table1 {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+            
+        }
+           
+    
+            th, td {
+                border: 1px solid black;
+                padding: 10px; /* Adjust the padding as needed */
+                text-align: center;
+            }
+            .tth{
+                padding: 30px;
+            }
+        </style>
+    </head>
+<body>
+<h1>CGPA Calculation</h1>
+
+<label>1st Sem Marks:</label><br></b><br>
+<label>Enter Credit Earned:</label><br>
+<input type="number" id="ce1">
+<br><br>
+<label>Enter Ci X Gi Earned:</label><br>
+<input type="number" id="gi1"><br>
+
+<b><br>
+    <label>2nd Sem Marks:</label><br></b><br>
+    <label >Enter Credit Earned:</label><br>
+    <input type="number" id="ce2">
+    <br><br>
+    <label>Enter Ci X Gi Earned:</label><br>
+    <input type="number" id="gi2"><br>
+    <b><br>
+        <label>3rd Sem Marks:</label><br></b><br>
+        <label >Enter Credit Earned:</label><br>
+        <input type="number" id="ce3">
+        <br><br>
+        <label >Enter Ci X Gi Earned:</label><br>
+        <input type="number" id="gi3">
+<br>
+<b><br>
+    <label >4th Sem Marks:</label><br></b><br>
+    <label >Enter Credit Earned:</label><br>
+    <input type="number" id="ce4">
+    <br><br>
+    <label>Enter Ci X Gi Earned:</label><br>
+    <input type="number" id="gi4"><br><br>
+<button onclick="myFunction()">Calculate </button><br><br>
+
+<div id="resulttable" hidden="hidden">
+    <table border="1" id="table1">
+        <thead>
+            <tr>
+                <th>Semester</th>
+                <th class="tth">1</th>
+                <th class="tth">2</th>
+                <th class="tth">3</th>
+                <th class="tth">4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Credit Earned</th>
+                <td id="cc1"></td>
+                <td id="cc2"></td>
+                <td id="cc3"></td>
+                <td id="cc4"></td>
+            </tr>
+            <tr>
+                <th>Ci x Gi Earned</th>
+                <td id="cc5"></td>
+                <td id="cc6"></td>
+                <td id="cc7"></td>
+                <td id="cc8"></td>
+            </tr>
+            <tr>
+                <th>SGPA</th>
+                <td id="cc9"></td>
+                <td id="cc10"></td>
+                <td id="cc11"></td>
+                <td id="cc12"></td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <b>CGPA RESULT:</b>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Cumulative</th>
+                <th>Up to this Exam</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+           <td> Credit Earned</td>
+           <td id="creditval"></td>
+          </tr>
+          <tr>
+<td>CGPA</td>
+<td id="cgpaval"></td>
+
+          </tr>
+          <tr><td>% Conversion</td><td id="conversionval"></td></tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+<script>
+function myFunction() {
+    const resultElement = document.getElementById("cc1");
+    const resulttable = document.getElementById("resulttable");
+    
+
+    const th1 = document.getElementById("cc1");
+    const th2 = document.getElementById("cc2");
+    const th3 = document.getElementById("cc3");
+    const th4 = document.getElementById("cc4");
+    const th5 = document.getElementById("cc5");
+    const th6 = document.getElementById("cc6");
+    const th7 = document.getElementById("cc7");
+    const th8 = document.getElementById("cc8");
+    const sg1 = document.getElementById("cc9");
+    const sg2 = document.getElementById("cc10");
+    const sg3 = document.getElementById("cc11");
+    const sg4 = document.getElementById("cc12");
+    const creditEarned= document.getElementById("creditval");
+    const cgpaval=document.getElementById("cgpaval");
+    const conversionval= document.getElementById("conversionval");
+    
+
+    const number1 = parseFloat(document.getElementById("ce1").value);
+    const number2 = parseFloat(document.getElementById("gi1").value);
+
+    const number3 = parseFloat(document.getElementById("ce2").value);
+    const number4 = parseFloat(document.getElementById("gi2").value);
+
+    const number5 = parseFloat(document.getElementById("ce3").value);
+    const number6 = parseFloat(document.getElementById("gi3").value);
+
+    const number7 = parseFloat(document.getElementById("ce4").value);
+    const number8 = parseFloat(document.getElementById("gi4").value);
+
+
+   const result1=number2/number1;
+   const result2=number4/number3;
+   const result3=number6/number5;
+   const result4=number8/number7;
+
+   const TotalCredit= number1+number3+number5+number7;
+
+   const roundedNumber1 = parseFloat(result1.toFixed(2));
+const roundedNumber2 = parseFloat(result2.toFixed(2));
+const roundedNumber3 = parseFloat(result3.toFixed(2));
+const roundedNumber4 = parseFloat(result4.toFixed(2));
+   const cgpaTotal= (roundedNumber1+roundedNumber2+roundedNumber3+roundedNumber4)/4;
+   const roundedNumber = (Math.round(cgpaTotal * 100) / 100).toFixed(2);
+   const temp=parseFloat(roundedNumber);
+  const conversionresult= (temp-0.75)*10;
+ resulttable.style.display="block";
+
+  th1.textContent=number1;
+  th2.textContent=number3;
+
+  th3.textContent=number5;
+  th4.textContent=number7;
+
+  th5.textContent=number2;
+  th6.textContent=number4;
+
+  th7.textContent=number6;
+  th8.textContent=number8;
+
+
+  sg1.textContent=roundedNumber1;
+  sg2.textContent=roundedNumber2;
+
+  sg3.textContent=roundedNumber3;
+  sg4.textContent=roundedNumber4;  
+  
+  creditEarned.textContent=TotalCredit;
+  cgpaval.textContent=roundedNumber;
+  conversionval.textContent=conversionresult;
+        
+        
+ 
+   
+       
+    
+
+
+}
+</script>
+
+</body>
+</html>
