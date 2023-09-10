@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
              html, body {
             height: 100%;
@@ -9,6 +9,7 @@
             padding: 10px;
             
         }
+      
         input{
             width: 100%;
             padding: 12px 20px;
@@ -22,7 +23,10 @@
 }
 
         table1 {
+            
+            border-collapse: collapse;
             width: 100%;
+            
             height: 100%;
             
             border-collapse: collapse;
@@ -41,14 +45,19 @@
                 border: 1px solid black;
                 padding: 10px; /* Adjust the padding as needed */
                 text-align: center;
+                
             }
             .tth{
                 padding: 30px;
             }
+         
+            
         </style>
     </head>
 <body>
 <h1>CGPA Calculation</h1>
+<b><h3>Enter Your Register Number:</h3></b>
+<input type="text" placeholder="Register Number" id="RegNo"><button onclick="fetchData()">Fetch Data</button>
 <h1>
 <label>1st Sem Marks:</label><br></b><br></h1>
 <label>Enter Digital Electronics Marks:</label><br>
