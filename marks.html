@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Diploma CGPA Calculation</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
              html, body {
@@ -50,14 +51,31 @@
             .tth{
                 padding: 30px;
             }
+            .en{
+                margin: 5px;
+                font-size: 20px;
+                color: red;
+            }
+            .kn{
+                color: red;
+            }
+            #ow{
+                color: blue;
+            }
          
             
         </style>
     </head>
 <body>
-<h1>CGPA Calculation</h1>
+  <span id="ow">  Developed By Johnson Veigas </span><u>
+<h1>CGPA Calculation</h1></u>
 <b><h3>Enter Your Register Number:</h3></b>
 <input type="text" placeholder="Register Number" id="RegNo" oninput="this.value = this.value.toUpperCase()"><button onclick="fetchData()">Fetch Data</button>
+<br><br><span class="en">*Please note that 2nd-semester marks must be entered manually for accurate CGPA calculation</span><br>
+<span class="kn">*ನಿಖರವಾದ CGPA ಲೆಕ್ಕಾಚಾರಕ್ಕಾಗಿ 2ನೇ-ಸೆಮಿಸ್ಟರ್ ಅಂಕಗಳನ್ನು ಹಸ್ತಚಾಲಿತವಾಗಿ ನಮೂದಿಸಬೇಕು ಎಂಬುದನ್ನು ದಯವಿಟ್ಟು ಗಮನಿಸಿ.</span><br>
+<span class="en">*Please update any re-exam marks manually for accurate CGPA calculation.</span><br>
+<span class="kn">*ನಿಖರವಾದ CGPA ಲೆಕ್ಕಾಚಾರಕ್ಕಾಗಿ ದಯವಿಟ್ಟು ಯಾವುದೇ ಮರು-ಪರೀಕ್ಷೆಯ ಅಂಕಗಳನ್ನು ಹಸ್ತಚಾಲಿತವಾಗಿ ನವೀಕರಿಸಿ.</span>
+
 <h1>
 <label>1st Sem Marks:</label><br></b><br></h1>
 <label>Enter Digital Electronics Marks:</label><br>
