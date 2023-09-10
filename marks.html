@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+             html, body {
+            height: 100%;
+            margin: 0;
+            padding: 10px;
+            
+        }
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+  border-radius: 4px;
+        }
+        input[type=number]:focus {
+  background-color: lightblue;
+}
+
+        table1 {
+            width: 100%;
+            height: 100%;
+            
+            border-collapse: collapse;
+            
+        }
+        button{
+            width: 100%;
+            padding: 10px 24px;
+            font-style: bold;
+            background-color: aqua;
+            border-radius: 12px;
+        }
+           
+    
+            th, td {
+                border: 1px solid black;
+                padding: 10px; /* Adjust the padding as needed */
+                text-align: center;
+            }
+            .tth{
+                padding: 30px;
+            }
+        </style>
+    </head>
+<body>
+<h1>CGPA Calculation</h1>
+<h1>
+<label>1st Sem Marks:</label><br></b><br></h1>
+<label>Enter Digital Electronics Marks:</label><br>
+<input type="number" id="ce1" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit1" value="4" >
+<br><br>
+<label>Enter Statistics And Analytics Marks:</label><br>
+<input type="number" id="ce2" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit2" value="4"><br><br>
+<label>Enter CAEG  Marks:</label><br>
+<input type="number" id="ce3" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit3" value="4">
+<br><br>
+<label>Enter FEEE Marks:</label><br>
+<input type="number" id="ce4" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit4" value="4"><br><br>
+<label>Enter EVS Marks:</label><br>
+<input type="number" id="ce5" placeholder="Obtained Marks" required ><br><br>
+<input type="number" id="credit5" value="2">
+<br><br>
+
+<h1>
+<b>2 nd Sem</b><br></h1>
+<label>Enter PMS Marks:</label><br>
+        <input type="number" id="ce6" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit6" value="4"><br><br>
+
+        <label>Enter Mathematics Marks:</label><br>
+        <input type="number" id="ce7" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit7" value="4"><br><br>
+
+        <label>Enter Communication Skilss Marks:</label><br>
+        <input type="number" id="ce8" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit8" value="4"><br><br>
+
+        <label>Enter IT Skilss Marks:</label><br>
+        <input type="number" id="ce9" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit9" value="4"><br><br>
+
+        <label>Enter ECD Marks:</label><br>
+        <input type="number" id="ce10" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit10" value="4"><br><br>
+        <label>Enter Kannada Marks:</label><br>
+        <input type="number" id="ce11" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit11" value="2"><br><br>
+
+<h1><b>3rd Sem</b></h1>
+<label>Enter AE Marks:</label><br>
+<input type="number" id="ce12" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit12" value="6"><br><br>
+
+<label>Enter LD Marks:</label><br>
+<input type="number" id="ce13" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit13" value="6"><br><br>
+
+<label>Enter Communication System Marks:</label><br>
+<input type="number" id="ce14" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit14" value="6"><br><br>
+
+<label>Enter EMT Marks:</label><br>
+<input type="number" id="ce15" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit15" value="6"><br><br>
+
+<label>Enter Kannada Marks:</label><br>
+<input type="number" id="ce16" placeholder="Obtained Marks" required><br><br>
+<input type="number" id="credit16" value="2"><br><br>
+
+<h1><b>4th Sem</b></h1>
+<label>Enter PCB Marks:</label><br>
+        <input type="number" id="ce17" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit17" value="6"><br><br>
+
+        <label>Enter WC Marks:</label><br>
+        <input type="number" id="ce18" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit18" value="6"><br><br>
+
+        <label>Enter ECP Marks:</label><br>
+        <input type="number" id="ce19" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit19" value="6"><br><br>
+
+        <label>Enter IA Marks:</label><br>
+        <input type="number" id="ce20" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit20" value="6"><br><br>
+
+        <label>Enter IC Marks:</label><br>
+        <input type="number" id="ce21" placeholder="Obtained Marks" required><br><br>
+        <input type="number" id="credit21" value="2"><br><br>
+
+
+
+
+
+<button onclick="myFunction()">Calculate </button><br><br>
+
+<div id="resulttable" hidden="hidden" >
+    <table border="1" id="table1">
+        <thead>
+            <tr>
+                <th>Semester</th>
+                <th class="tth">1</th>
+                <th class="tth">2</th>
+                <th class="tth">3</th>
+                <th class="tth">4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Credit Earned</th>
+                <td id="cc1"></td>
+                <td id="cc2"></td>
+                <td id="cc3"></td>
+                <td id="cc4"></td>
+            </tr>
+            <tr>
+                <th>Ci x Gi Earned</th>
+                <td id="cc5"></td>
+                <td id="cc6"></td>
+                <td id="cc7"></td>
+                <td id="cc8"></td>
+            </tr>
+            <tr>
+                <th>SGPA</th>
+                <td id="cc9"></td>
+                <td id="cc10"></td>
+                <td id="cc11"></td>
+                <td id="cc12"></td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <b>CGPA RESULT:</b>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Cumulative</th>
+                <th>Up to this Exam</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+           <td> Credit Earned</td>
+           <td id="creditval"></td>
+          </tr>
+          <tr>
+<td>CGPA</td>
+<td id="cgpaval"></td>
+
+          </tr>
+          <tr><td>% Conversion</td><td id="conversionval"></td></tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
