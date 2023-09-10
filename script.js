@@ -1,3 +1,103 @@
+function fetchData(){
+    regNo=document.getElementById('RegNo').value;
+   
+    const apiUrlFor4 = `https://api.apispreadsheets.com/data/Ba4mipcuwFhRAmDN/?query=select * from Ba4mipcuwFhRAmDN where RegNo='${regNo}'`;
+    const apiUrlFor3=`https://api.apispreadsheets.com/data/AADDTgDwZnlLeqDv/?query=select * from AADDTgDwZnlLeqDv where RegNo='${regNo}'`;
+    const apiUrlFor1=`https://api.apispreadsheets.com/data/PONSQkiOxtKZ345r/?query=select * from PONSQkiOxtKZ345r where RegNo='${regNo}'`;
+    //console.log(reqUrl);
+    fetch(apiUrlFor4)
+  .then((res) => {
+    if (res.status === 200) {
+      // SUCCESS
+      res
+        .json()
+        .then((data) => {
+          if (data.data.length > 0) {
+            // Assuming there's only one record for the given RegNo
+            const studentData = data.data[0]; // Get the first record
+            const { SUB1, SUB2, SUB3, SUB4, SUB5 } = studentData;
+            
+            document.getElementById('ce17').value = studentData.SUB1;
+            document.getElementById('ce18').value = studentData.SUB2;
+            document.getElementById('ce19').value = studentData.SUB3;
+            document.getElementById('ce20').value = studentData.SUB4;
+            document.getElementById('ce21').value = studentData.SUB5;
+                                    
+
+            // Now you have the subject marks in separate variables
+          } else {
+            console.log("No data found for the given RegNo");
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // ERROR
+    }
+  });
+  fetch(apiUrlFor3)
+  .then((res) => {
+    if (res.status === 200) {
+      // SUCCESS
+      res
+        .json()
+        .then((data) => {
+          if (data.data.length > 0) {
+            // Assuming there's only one record for the given RegNo
+            const studentData = data.data[0]; // Get the first record
+            const { SUB1, SUB2, SUB3, SUB4, SUB5 } = studentData;
+            
+            document.getElementById('ce12').value = studentData.SUB1;
+            document.getElementById('ce13').value = studentData.SUB2;
+            document.getElementById('ce14').value = studentData.SUB3;
+            document.getElementById('ce15').value = studentData.SUB4;
+            document.getElementById('ce16').value = studentData.SUB5;
+                                    
+
+            // Now you have the subject marks in separate variables
+          } else {
+            console.log("No data found for the given RegNo");
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // ERROR
+    }
+  });
+
+  fetch(apiUrlFor1)
+  .then((res) => {
+    if (res.status === 200) {
+      // SUCCESS
+      res
+        .json()
+        .then((data) => {
+          if (data.data.length > 0) {
+            // Assuming there's only one record for the given RegNo
+            const studentData = data.data[0]; // Get the first record
+            const { SUB1, SUB2, SUB3, SUB4, SUB5 } = studentData;
+            
+            document.getElementById('ce1').value = studentData.SUB1;
+            document.getElementById('ce2').value = studentData.SUB2;
+            document.getElementById('ce3').value = studentData.SUB3;
+            document.getElementById('ce4').value = studentData.SUB4;
+            document.getElementById('ce5').value = studentData.SUB5;
+                                    
+
+            // Now you have the subject marks in separate variables
+          } else {
+            console.log("No data found for the given RegNo");
+          }
+        })
+        .catch((err) => console.log(err));
+    } else {
+      // ERROR
+    }
+  });
+}
+
+
+
+
 function myFunction() {
     const resultElement = document.getElementById("cc1");
     const resulttable = document.getElementById("resulttable");
